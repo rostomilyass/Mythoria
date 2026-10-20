@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mythoria — Jeu de cartes à collectionner</title>
+  <meta name="description" content="Mythoria : ouvrez des boosters, remplissez votre grimoire et composez votre deck dark fantasy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Thème : remplace les variables :root de style.css -->
+  <style type="text/tailwindcss">
+    @theme {
+      --color-bg: #0b0a10;
+      --color-bg-alt: #0f0d16;
+      --color-panel: #15121d;
+      --color-line: #2a2437;
+      --color-gold: #c9a24b;
+      --color-gold-hi: #e8c76a;
+      --color-violet: #7b3fe4;
+      --color-text: #e8e2d0;
+      --color-muted: #a89f8a;
+      --font-title: "Cinzel", serif;
+      --font-logo: "Cinzel Decorative", serif;
+      --font-body: "Crimson Pro", serif;
+    }
+  </style>
+</head>
+
+<body class="bg-bg text-text font-body text-lg leading-normal">
+
+  <!-- Header -->
+  <header class="relative flex flex-wrap items-center justify-between gap-6 min-h-18 px-4 md:px-16 border-b border-line">
+    <a href="index.html" class="font-logo text-2xl tracking-[.12em] text-gold hover:text-gold-hi">MYTHORIA</a>
+
+    <nav id="main-nav" aria-label="Navigation principale" class="flex flex-wrap gap-x-9 gap-y-0">
+      <a href="index.html" aria-current="page" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-gold-hi">Accueil</a>
+      <a href="shop.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Boutique</a>
+      <a href="opening.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Ouverture</a>
+      <a href="grimoire.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Grimoire</a>
+      <a href="deck.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Deck</a>
+    </nav>
+
+    <a href="shop.html" class="flex items-center gap-2 min-h-11 font-title text-[.85rem] text-gold hover:text-gold-hi">
+      Panier
+      <span id="cart-count" class="bg-gold text-bg rounded-xl px-2.5 py-0.5 font-bold">0</span>
+    </a>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="min-h-180 p-6 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 bg-[url(assets/hero.svg)] w-full">
+
+      <div class="max-w-160">
+        <p class="text-gold uppercase tracking-[.3em] text-[.9rem]">Jeu de cartes à collectionner</p>
+        <h1 class="font-logo font-bold text-gold leading-none my-4 text-[clamp(3rem,9vw,7.25rem)] [text-shadow:0_0_40px_rgba(201,162,75,.4)]">
+          MYTHORIA
+        </h1>
+        <p class="italic text-[clamp(1.4rem,3vw,1.9rem)] mb-10">Invoque les légendes. Écris ton destin.</p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="shop.html"
+             class="inline-block min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">
+            Découvrir les boosters
+          </a>
+          <a href="grimoire.html"
+             class="inline-block min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs border border-gold text-text transition hover:bg-gold/15">
+            Ouvrir mon grimoire
+          </a>
+        </div>
+      </div>
+
+      
+      
+    </section>
+    <section class="min-h-180 p-6  flex  items-center justify-between gap-12 bg-panel ">
+      <div class="flex items-center justify-center flex-col w-full mb-auto">
+        <h2 class=" font-bold text-gold tracking-[.3em] text-[2.9rem] ">LES BOOSTERS PACK</h2>
+        <p class="italic text-[clamp(1.4rem,3vw,1.9rem)] mb-10">nos differents packs pour glorifier votre Deck</p>
+        <div class="flex flex-row gap-10">
+          <div class="flex items-center justify-center flex-col w-50 ">
+            <img src="assets/booster-beginner.svg" alt="image du pack beginner">
+            <p>Pack du débutant</p>
+          </div>
+          <div class="flex items-center justify-center flex-col w-50">
+              <img src="assets/booster-legends.svg" alt="image du pack legends">
+              <p>Invocation des légendes</p>
+          </div> 
+          <div class="flex items-center justify-center flex-col w-50">
+              <img src="assets/booster-dark.svg" alt="image du pack dark">
+              <p>Invocation obscure</p>
+          </div>
+          <div class="flex items-center justify-center flex-col w-50">
+              <img src="assets/booster-lucky.svg" alt="image du pack lucky">
+              <p>Pack de la chance</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="min-h-180 p-6  flex  items-center justify-between gap-12 bg-panel ">
+      <div class="flex items-center justify-center flex-col w-full mb-auto">
+        <h2 class=" font-bold text-gold tracking-[.3em] text-[2.9rem] ">LES CATEGORIES DE CARTES</h2>
+        <p class="italic text-[clamp(1.4rem,3vw,1.9rem)] mb-10">choisis ton chaampion, ton sort et ton monstre and get ready</p>
+        <div class="flex flex-row gap-10">
+          <div class="flex items-center justify-center flex-col w-50 ">
+            <img src="assets/booster-beginner.svg" alt="image du spell">
+            <p>Spells</p>
+          </div>
+          <div class="flex items-center justify-center flex-col w-50">
+              <img src="assets/booster-legends.svg" alt="image du serviteurs des lumieres">
+              <p>Serviteurs des lumieres</p>
+          </div> 
+          <div class="flex items-center justify-center flex-col w-50">
+              <img src="assets/booster-dark.svg" alt="image du serviteurs des obscures">
+              <p>Serviteurs des obscures</p>
+          </div>
+          <div class="flex items-center justify-center flex-col w-50">
+              <img src="assets/booster-lucky.svg" alt="image des minions">
+              <p>Minions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+  </main>
+
+</body>
+</html>

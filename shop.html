@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mythoria — Jeu de cartes entrer notre shop et ouvrer des boosters</title>
+  <meta name="description" content="Mythoria : ouvrez des boosters, remplissez votre grimoire et composez votre deck dark fantasy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-bg: #0b0a10;
+      --color-bg-alt: #0f0d16;
+      --color-panel: #15121d;
+      --color-line: #2a2437;
+      --color-gold: #c9a24b;
+      --color-gold-hi: #e8c76a;
+      --color-violet: #7b3fe4;
+      --color-text: #e8e2d0;
+      --color-muted: #a89f8a;
+      --font-title: "Cinzel", serif;
+      --font-logo: "Cinzel Decorative", serif;
+      --font-body: "Crimson Pro", serif;
+    }
+  </style>
+</head>
+
+<body class="bg-bg text-text font-body text-lg leading-normal"></body>
+<header class="relative flex flex-wrap items-center justify-between gap-6 min-h-18 px-4 md:px-16 border-b border-line">
+    <a href="index.html" class="font-logo text-2xl tracking-[.12em] text-gold hover:text-gold-hi">MYTHORIA</a>
+
+    <nav id="main-nav" aria-label="Navigation principale" class="flex flex-wrap gap-x-9 gap-y-0">
+      <a href="index.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 hover:text-gold-hi">Accueil</a>
+      <a href="shop.html"aria-current="page" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] text-gold-hi">Boutique</a>
+      <a href="opening.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Ouverture</a>
+      <a href="grimoire.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Grimoire</a>
+      <a href="deck.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Deck</a>
+    </nav>
+
+    <a href="shop.html" class="flex items-center gap-2 min-h-11 font-title text-[.85rem] text-gold hover:text-gold-hi">
+      Panier
+      <span id="cart-count" class="bg-gold text-bg rounded-xl px-2.5 py-0.5 font-bold">0</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="min-h-180 p-6 flex  items-center justify-between gap-12 ">
+      <div class="flex items-center justify-center flex-col w-full mb-auto">
+        <h1 class=" font-bold text-gold tracking-[.3em] text-[2.9rem] ">LES BOOSTERS PACK</h1>
+        <p class="italic text-[clamp(1.4rem,3vw,1.9rem)] mb-10">nos differents packs pour glorifier votre Deck</p>
+        <div class="flex flex-row gap-10">
+          <div class="flex items-center justify-center flex-col  ">
+            <img src="assets/booster-beginner.svg" alt="image du pack beginner" class="h-90 w-90">
+            <p class="text-gold-hi font-bold tracking-wider ">Pack du débutant</p>
+            <p class="text-center">Un pack conçu pour les nouveaux joueurs, contenant un assortiment de cartes communes et quelques cartes de rareté supérieure.</p>
+          </div>
+          <div class="flex items-center justify-center flex-col ">
+              <img src="assets/booster-legends.svg" alt="image du pack legends" class="h-90 w-90">
+              <p class="text-gold-hi font-bold tracking-wider ">Invocation des légendes</p>
+              <p class="text-center">Un pack premium proposant une meilleure probabilité d'obtenir des cartes rares, épiques ou légendaires.</p>
+          </div> 
+          <div class="flex items-center justify-center flex-col ">
+              <img src="assets/booster-dark.svg" alt="image du pack dark" class="h-90 w-90">
+              <p class="text-gold-hi font-bold tracking-wider ">Invocation obscure</p>
+              <p class="text-center">Un booster thématique consacré aux monstres, aux serviteurs des Ténèbres et aux sorts interdits.</p>
+          </div>
+          <div class="flex items-center justify-center flex-col ">
+              <img src="assets/booster-lucky.svg" alt="image du pack lucky" class="h-90 w-90">
+              <p class="text-gold-hi font-bold tracking-wider ">Pack de la chance</p>
+              <p class="text-center">Un pack mystère avec une composition aléatoire et une chance de découvrir une carte exceptionnelle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -27,54 +27,97 @@
   </style>
 </head>
 
-<body class="bg-bg text-text font-body text-lg leading-normal"></body>
-<header class="relative flex flex-wrap items-center justify-between gap-6 min-h-18 px-4 md:px-16 border-b border-line">
-    <a href="index.html" class="font-logo text-2xl tracking-[.12em] text-gold hover:text-gold-hi">MYTHORIA</a>
+<body class="bg-bg text-text font-body text-lg leading-normal">
+    <header class="relative flex flex-wrap items-center justify-between gap-6 min-h-18 px-4 md:px-16 border-b border-line">
+        <a href="index.html" class="font-logo text-2xl tracking-[.12em] text-gold hover:text-gold-hi">MYTHORIA</a>
 
-    <nav id="main-nav" aria-label="Navigation principale" class="flex flex-wrap gap-x-9 gap-y-0">
-      <a href="index.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 hover:text-gold-hi">Accueil</a>
-      <a href="shop.html"aria-current="page" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] text-gold-hi">Boutique</a>
-      <a href="opening.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Ouverture</a>
-      <a href="grimoire.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Grimoire</a>
-      <a href="deck.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Deck</a>
-    </nav>
+        <nav id="main-nav" aria-label="Navigation principale" class="flex flex-wrap gap-x-9 gap-y-0">
+            <a href="index.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 hover:text-gold-hi">Accueil</a>
+            <a href="shop.html" aria-current="page" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] text-gold-hi">Boutique</a>
+            <a href="opening.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Ouverture</a>
+            <a href="grimoire.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Grimoire</a>
+            <a href="deck.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Deck</a>
+        </nav>
 
-    <a href="shop.html" class="flex items-center gap-2 min-h-11 font-title text-[.85rem] text-gold hover:text-gold-hi">
-      Panier
-      <span id="cart-count" class="bg-gold text-bg rounded-xl px-2.5 py-0.5 font-bold">0</span>
-    </a>
+        <a href="shop.html" class="flex items-center gap-2 min-h-11 font-title text-[.85rem] text-gold hover:text-gold-hi">
+        Panier
+        <span id="cart-count" class="bg-gold text-bg rounded-xl px-2.5 py-0.5 font-bold">0</span>
+        </a>
   </header>
 
-  <main>
-    <section class="min-h-180 p-6 flex  items-center justify-between gap-12 ">
+  <main class="px-4 md:px-16 py-12">
+    <section class="min-h-180 p-6 flex  items-center justify-between gap-12 bg-panel ">
       <div class="flex items-center justify-center flex-col w-full mb-auto">
-        <h1 class=" font-bold text-gold tracking-[.3em] text-[2.9rem] ">LES BOOSTERS PACK</h1>
+        <h2 class=" font-bold text-gold tracking-[.3em] text-[2.9rem] ">LES BOOSTERS PACK</h2>
         <p class="italic text-[clamp(1.4rem,3vw,1.9rem)] mb-10">nos differents packs pour glorifier votre Deck</p>
-        <div class="flex flex-row gap-10">
-          <div class="flex items-center justify-center flex-col  ">
-            <img src="assets/booster-beginner.svg" alt="image du pack beginner" class="h-90 w-90">
-            <p class="text-gold-hi font-bold tracking-wider ">Pack du débutant</p>
-            <p class="text-center">Un pack conçu pour les nouveaux joueurs, contenant un assortiment de cartes communes et quelques cartes de rareté supérieure.</p>
-          </div>
-          <div class="flex items-center justify-center flex-col ">
-              <img src="assets/booster-legends.svg" alt="image du pack legends" class="h-90 w-90">
-              <p class="text-gold-hi font-bold tracking-wider ">Invocation des légendes</p>
-              <p class="text-center">Un pack premium proposant une meilleure probabilité d'obtenir des cartes rares, épiques ou légendaires.</p>
-          </div> 
-          <div class="flex items-center justify-center flex-col ">
-              <img src="assets/booster-dark.svg" alt="image du pack dark" class="h-90 w-90">
-              <p class="text-gold-hi font-bold tracking-wider ">Invocation obscure</p>
+        <ul id="catalogue" class="flex flex-row gap-10 ">
+          <li class="produit flex items-center justify-center flex-col w-50  h-full">
+            <img src="assets/booster-beginner (1).svg" alt="image du pack beginner" class="h-1/2 w-auto drop-shadow-[0_12px_20px_rgba(0,0,0,.6)]">
+            <span class="titre text-gold-hi font-bold">Pack du débutant</span>
+            <p class="text-center">Pour les nouveaux joueurs, contenant des cartes communes et quelques cartes de rareté supérieure.</p>
+            <span class="prix text-gold">3.99 €</span>
+            <div class="flex gap-2">
+              <input type="number" min="1" value="1" class="quantite w-1/4 border-2 border-indigo-600 rounded-[5px]">
+              <button class="ajouter inline-block min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">Ajouter</button>
+            </div>
+          </li>
+          <li class="produit flex items-center justify-center flex-col w-50  h-full">
+              <img src="assets/booster-legends (1).svg" alt="image du pack legends" class="h-1/2 w-auto drop-shadow-[0_12px_20px_rgba(0,0,0,.6)]">
+              <span class="titre text-gold-hi font-bold">Invocation des légendes</span>
+              <p class="text-center">Un pack premium proposant une meilleure probabilité d'obtenir des cartes de rareté supérieure.</p>
+              <span class="prix text-gold">9.99 €</span> 
+              <div class="flex gap-2">
+                <input type="number" min="1" value="1" class="quantite w-1/4 border-2 border-indigo-600 rounded-[5px]">
+                <button class="ajouter inline-block min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">Ajouter</button>
+              </div>
+          </li> 
+          <li class="produit flex items-center justify-center flex-col w-50  h-full">
+              <img src="assets/booster-dark (1).svg" alt="image du pack dark" class="h-1/2 w-auto drop-shadow-[0_12px_20px_rgba(0,0,0,.6)]">
+              <span class="titre text-gold-hi font-bold">Invocation obscure</span>
               <p class="text-center">Un booster thématique consacré aux monstres, aux serviteurs des Ténèbres et aux sorts interdits.</p>
-          </div>
-          <div class="flex items-center justify-center flex-col ">
-              <img src="assets/booster-lucky.svg" alt="image du pack lucky" class="h-90 w-90">
-              <p class="text-gold-hi font-bold tracking-wider ">Pack de la chance</p>
+              <span class="prix text-gold">6.99 €</span> 
+              <div class="flex gap-2">
+                <input type="number" min="1" value="1" class="quantite w-1/4 border-2 border-indigo-600 rounded-[5px]">
+                <button class="ajouter inline-block min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">Ajouter</button>
+              </div>
+          </li>
+          <li class="produit flex items-center justify-center flex-col w-50  h-full">
+              <img src="assets/booster-lucky (1).svg" alt="image du pack lucky" class="h-1/2 w-auto drop-shadow-[0_12px_20px_rgba(0,0,0,.6)]">
+              <span class="titre text-gold-hi font-bold">Pack de la chance</span>
               <p class="text-center">Un pack mystère avec une composition aléatoire et une chance de découvrir une carte exceptionnelle.</p>
+              <span class="prix text-gold">5.99 €</span>
+              <div class="flex gap-2">
+                <input type="number" min="1" value="1" class="quantite w-1/4 border-2 border-indigo-600 rounded-[5px]">
+                <button class="ajouter inline-block min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">Ajouter</button>
+              </div>
+          </li>
+        </ul>
+        <section aria-labelledby="panier-titre" class="w-full max-w-2xl mt-16 border border-line bg-bg-alt rounded-xs p-6 md:p-8 shadow-[0_0_40px_rgba(0,0,0,.5)]">
+          <h2 id="panier-titre" class="font-title font-bold text-gold uppercase tracking-[.3em] text-2xl text-center ">
+            Panier
+          </h2>
+
+          <ul id="panier" class="divide-y divide-line"></ul>
+
+          <div class="flex items-center justify-between pt-6 mt-2">
+            <span class="font-title uppercase tracking-[.14em] text-[.85rem] text-muted">Total</span>
+            <span id="total" class="font-title font-bold text-3xl text-gold-hi">0.00 €</span>
           </div>
-        </div>
+
+          <button id="commander" onclick="alert('votre commande est lancé')" class="inline-block min-h-12 mt-6 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">
+            Commander
+          </button>
+
+        </section>
+        <script src="packs.js" defer></script>
       </div>
+
     </section>
+    
+
+    
   </main>
+</body>  
 
 
 

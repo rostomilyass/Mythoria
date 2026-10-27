@@ -1,0 +1,206 @@
+# Mythoria — Jeu de cartes à collectionner
+
+Site web officiel de **Mythoria**, un jeu de cartes à collectionner dark fantasy.
+Les joueurs découvrent l'univers du jeu, achètent des boosters, les ouvrent pour obtenir des cartes aléatoires et rangent leur collection dans un grimoire.
+
+**Site en ligne (Vercel) :** https://mythoria-gilt.vercel.app/
+**Planification des tâches :** [GitHub Projects — Mythoria](https://github.com/users/rostomilyass/projects/5) · [Liste des issues](https://github.com/rostomilyass/Mythoria/issues)
+
+---
+
+## Sommaire
+1. [Contexte](#contexte)
+2. [État d'avancement](#état-davancement)
+3. [Fonctionnalités](#fonctionnalités)
+4. [Données du jeu](#données-du-jeu)
+5. [Stockage des données (LocalStorage)](#stockage-des-données-localstorage)
+6. [Technologies](#technologies)
+7. [Structure du projet](#structure-du-projet)
+8. [Lancer et tester le projet](#lancer-et-tester-le-projet)
+9. [Règles du jeu définies dans le projet](#règles-du-jeu-définies-dans-le-projet)
+10. [Planification](#planification)
+11. [Prochaines étapes](#prochaines-étapes)
+12. [Auteur](#auteur)
+
+---
+
+## Contexte
+
+Le studio souhaite lancer Mythoria, un jeu de cartes dans lequel les joueurs découvrent des créatures, des héros, des serviteurs et des sorts. La mission est de concevoir et développer le site web du jeu : boutique de boosters, ouverture des paquets, collection (grimoire) et création de deck.
+
+## État d'avancement
+
+| Page | Fichier | Statut | Détail |
+|---|---|---|---|
+| **Home** | `index.html` | Terminée | Hero, boosters, catégories de cartes, cartes légendaires |
+| **Boutique** | `shop.html` | Terminée | Liste des boosters, panier, commande simulée |
+| **Opening Chamber** | `opening.html` | Terminée | Ouverture animée des boosters, tirage aléatoire pondéré |
+| **My Grimoire** | `grimoire.html` | Terminée | Collection en livre, filtres, détail des cartes |
+| **My Deck** | `deck.html` | À venir | Création du deck |
+
+## Fonctionnalités
+
+### Page d'accueil
+- Section **Hero** immersive : nom du jeu, illustration, slogan
+- Boutons « **Découvrir les boosters** » (vers la boutique) et « **Ouvrir mon grimoire** » (vers la collection)
+- Présentation des **4 catégories de cartes** : Serviteurs de la Lumière, Serviteurs des Ténèbres, Minions, Spells
+- Section des **4 boosters** disponibles
+- Mise en avant de **cartes légendaires**
+- Navigation vers toutes les pages, avec compteur et total du panier dans l'en-tête
+
+### Boutique et panier
+| Booster | Prix |
+|---|---|
+| Pack du débutant | 399 dh |
+| Invocation des légendes | 999 dh |
+| Invocation obscure | 699 dh |
+| Pack de la chance | 599 dh |
+
+- [x] Ajouter un booster au panier, avec choix de la quantité
+- [x] Un même booster ajouté deux fois est fusionné sur une seule ligne
+- [x] Retirer une ligne du panier
+- [x] Total et nombre de boosters mis à jour en temps réel, **dans l'en-tête de toutes les pages**
+- [x] Panier conservé après actualisation (**LocalStorage**)
+- [x] Bouton « Commander » : validation **simulée**, sans paiement réel (désactivé si le panier est vide)
+- [x] À la commande, les boosters achetés sont ajoutés au stock du joueur et l'historique des commandes est enregistré
+
+### Opening Chamber (ouverture des boosters)
+1. Le joueur voit les boosters qu'il a achetés et leur quantité.
+2. Il clique sur **« Ouvrir le booster »**.
+3. Le booster tremble, puis 5 cartes arrivent **face cachée**.
+4. Il retourne chaque carte au clic (ou utilise « Tout révéler »). Chaque carte affiche son illustration, son nom, son type, sa rareté et ses statistiques (attaque / vie, ou effet pour un sort).
+5. Les cartes obtenues sont **ajoutées automatiquement à la collection**.
+6. Un **message spécial** apparaît pour une carte rare, épique ou légendaire.
+
+Le tirage est calculé **au moment du clic** par une fonction JavaScript : l'animation ne fait que révéler un résultat qui vient d'être tiré.
+
+### My Grimoire (collection)
+- Collection présentée comme un **livre ancien** : couverture de cuir, pages de parchemin, **double page** avec 4 cartes par page
+- **Pages navigables** (boutons Précédent / Suivant ou flèches du clavier) avec animation de page
+- Affichage des cartes **obtenues** uniquement, avec un badge ×2, ×3… pour les doublons
+- Compteur « X / 20 cartes découvertes »
+- **Filtres** par type (Lumière, Ténèbres, Minions, Spells) et par rareté
+- **Détail d'une carte au clic** : illustration, nom, type, rareté, description, statistiques ou effet, nombre d'exemplaires, identifiant
+- **État vide** quand la collection ne contient aucune carte, et message dédié quand les filtres ne donnent aucun résultat
+- Collection conservée après actualisation
+
+## Données du jeu
+
+Toutes les données sont définies en JavaScript dans `cards.js`.
+
+### Catalogue de cartes (20 cartes)
+Chaque carte possède un identifiant unique, un nom, une illustration (`icone` ou `image`), une description, un type, une rareté, et soit des statistiques (`atk`, `pv`), soit un `effet` pour les sorts.
+
+| Type | Cartes |
+|---|---|
+| Serviteurs de la Lumière (héros) | 5 |
+| Serviteurs des Ténèbres (monstres) | 6 |
+| Minions (serviteurs) | 4 |
+| Spells (sorts) | 5 |
+
+| Rareté | Cartes |
+|---|---|
+| Commune | 8 |
+| Rare | 5 |
+| Épique | 4 |
+| Légendaire | 3 |
+
+### Boosters et probabilités
+Chaque booster contient **5 cartes**. Les probabilités sont des poids définis dans les données (`BOOSTERS`) et appliquées par la fonction `tirerRarete()`.
+
+| Booster | Cartes éligibles | Commune | Rare | Épique | Légendaire | Garantie (dernière carte) |
+|---|---|---|---|---|---|---|
+| Pack du débutant | Tous types | 70 % | 22 % | 7 % | 1 % | — |
+| Invocation des légendes | Tous types | 40 % | 35 % | 18 % | 7 % | Épique minimum |
+| Invocation obscure | Ténèbres, Minions, Spells | 55 % | 28 % | 13 % | 4 % | Rare minimum |
+| Pack de la chance | Tous types | 60 % | 15 % | 15 % | 10 % | — |
+
+### Fonctionnement du tirage
+1. `tirerRarete()` choisit une rareté au hasard selon les probabilités du booster.
+2. Si la carte est la dernière du booster et qu'une rareté minimale est garantie, la rareté est relevée si besoin.
+3. `tirerCarte()` choisit au hasard une carte parmi celles de cette rareté dont le type est autorisé par le booster.
+4. Si aucune carte n'est éligible, la rareté descend d'un cran.
+5. `ouvrirBooster()` répète l'opération 5 fois.
+
+## Stockage des données (LocalStorage)
+
+| Clé | Contenu | Écrite par |
+|---|---|---|
+| `panier` | Lignes du panier : `{ id, titre, prix, qte }` | `packs.js` |
+| `commandes` | Historique des commandes simulées | `packs.js` |
+| `boosters` | Stock de boosters achetés, par exemple `{ "beginner": 2 }` | `packs.js` (achat), `opening.js` (ouverture) |
+| `collection` | Cartes possédées et quantités, par exemple `{ "l1": 3, "t6": 1 }` | `opening.js` |
+
+## Technologies
+- **HTML5**
+- **Tailwind CSS v4** (version navigateur via CDN, thème personnalisé dans chaque page : palette dark fantasy, polices Cinzel et Crimson Pro)
+- **JavaScript** (vanilla) : panier, tirage aléatoire, animations, collection
+- **Illustrations SVG** originales (dossier `assets/`)
+- **Git / GitHub** : versionnement et planification (Projects, Issues, Milestones)
+- **Vercel** : hébergement
+
+## Structure du projet
+
+```
+mythoria/
+├── index.html          # Page d'accueil
+├── shop.html           # Boutique + panier
+├── opening.html        # Ouverture des boosters
+├── grimoire.html       # Collection en forme de livre
+├── deck.html           # Création du deck (à venir)
+├── packs.js            # Panier, commande simulée, stock de boosters
+├── cards.js            # Catalogue de cartes, boosters, probabilités, fonctions de tirage
+├── opening.js          # Animation et logique d'ouverture
+├── grimoire.js         # Livre, filtres, détail des cartes
+├── assets/             # Illustrations SVG (boosters, catégories, cartes)
+├── PLANNING_ISSUES.md  # Liste des tâches du projet
+└── README.md
+```
+
+Chaque page charge `packs.js` pour l'en-tête (compteur et total du panier). `cards.js` doit être chargé **avant** `opening.js` et `grimoire.js`.
+
+## Lancer et tester le projet
+
+Le site est statique : ouvrir `index.html` dans un navigateur suffit (ou utiliser une extension comme Live Server).
+
+Pour tester sans passer par la boutique, coller ces lignes dans la console du navigateur (F12, onglet Console), puis recharger la page :
+
+```javascript
+// Se donner des boosters à ouvrir (page Opening Chamber)
+localStorage.setItem('boosters', JSON.stringify({ beginner: 2, legends: 2, dark: 1, lucky: 1 }));
+
+// Se donner des cartes (page Grimoire)
+localStorage.setItem('collection', JSON.stringify({ l1: 3, l5: 1, t3: 1, t6: 1, m3: 1, s1: 2, s5: 1 }));
+```
+
+Les données étant stockées dans le navigateur, chaque navigateur (ou appareil) a sa propre collection.
+
+## Règles du jeu définies dans le projet
+
+- Un booster contient **5 cartes**, tirées aléatoirement dans un catalogue défini en JavaScript.
+- Les probabilités d'obtention dépendent du type de booster et sont définies dans les données du jeu.
+- La **collection** peut contenir plusieurs exemplaires d'une même carte.
+- Le **deck** contient **20 cartes maximum**, avec **1 seule copie** de chaque carte unique.
+- Le panier, les boosters, la collection et le deck sont conservés dans le **LocalStorage**.
+
+## Planification
+
+La planification est gérée sur GitHub : **Projects** (tableau Kanban), **Issues** (une tâche = une issue).
+
+| Période | Travail réalisé |
+|---|---|
+| Jour 1 | Lecture du brief, choix de la direction artistique (palette dark fantasy, polices), structure du projet, planification GitHub |
+| Jour 2 | Maquette et page d'accueil (HTML/CSS), illustrations SVG |
+| Jour 3 | Page Boutique : affichage des boosters, premières fonctions du panier |
+| Jour 4 | Panier complet (total en temps réel, commande simulée), déploiement sur Vercel, README |
+| Suite | Catalogue de cartes et probabilités, Opening Chamber (tirage pondéré et animation), My Grimoire (livre, filtres, détail), total du panier dans l'en-tête |
+
+## Prochaines étapes
+
+1. **My Deck** : création du deck à partir de la collection, limite de 20 cartes, 1 copie par carte, statistiques
+2. Illustrations des cartes : remplacer les emojis par des images (champ `image` du catalogue)
+3. **Bonus** : effet holographique sur les cartes rares, historique des ouvertures, reçu imprimable
+
+## Auteur
+
+Projet réalisé par **Ilyass** dans le cadre de la formation.

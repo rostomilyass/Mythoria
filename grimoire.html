@@ -26,7 +26,7 @@
       --font-body: "Crimson Pro", serif;
       --animate-tourne: tourne 0.45s ease-out;
       @keyframes tourne {
-        from { opacity:0; transfrom: perspective(900px) rotateY(-14deg) scale(0.98); }
+        from { opacity:0; transform: perspective(900px) rotateY(-14deg) scale(0.98); }
         to { opacity: 1; transform: none; }
       }
     }
@@ -59,7 +59,7 @@
         <div class="flex flex-wrap justify-center gap-6 mb-8">
             <label class="flex items-center gap-3 font-title text-[.85rem] uppercase tracking-[.14em]">
                 type
-                <select id="filter-type" class="bg-bg-alt border border-gold text-text p-2 rounded-xs font-body text-lg normal-case tracking-normal">
+                <select id="filtre-type" class="bg-bg-alt border border-gold text-text p-2 rounded-xs font-body text-lg normal-case tracking-normal">
                     <option value="tous">Tous les types</option>
                     <option value="lumiere">Serviteurs de la lumieres (heros)</option>
                     <option value="tenebres">Serviteurs des Tenebres (monstres)</option>
@@ -83,8 +83,8 @@
             <p class="font-title font-bold text-gold text-2xl tracking-widest mb-2">Votre grimoire est vide.</p>
             <p class="italic text-muted mb-8">Aucune carte collecté pour l'instant. Achetez un booster et ouvrez-le pour remplir vos pages.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="shop.html" class="min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover :bg-gold-hi">Aller a la boutique</a>
-                <a href="opening.html" class="min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs border-gold text-gold transition hover :bg-gold hover:text-bg">Ouvrir mes boosters</a>
+                <a href="shop.html" class="min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi">Aller a la boutique</a>
+                <a href="opening.html" class="min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs border border-gold text-gold transition hover:bg-gold hover:text-bg">Ouvrir mes boosters</a>
             </div>
         </div>
         <div id="livre" class="mx-auto max-w-5xl">
@@ -103,6 +103,7 @@
         </div>
     </section>
   </main>
+  <dialog id="detail" class="m-auto w-[90vw] max-w-sm bg-transparent p-0 text-text backdrop:bg-black/75"></dialog>
   <script src="packs.js" defer></script>
   <script src="cards.js" defer></script>
   <script src="grimoire.js" defer></script>

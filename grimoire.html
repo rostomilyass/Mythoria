@@ -81,8 +81,31 @@
         <div id="vide-total" hidden class="text-center py-16">
             <p class="text-6xl mb-4">📖</p>
             <p class="font-title font-bold text-gold text-2xl tracking-widest mb-2">Votre grimoire est vide.</p>
-            <p class="italic text-muted mb-8">Aucune carte</p>
-
+            <p class="italic text-muted mb-8">Aucune carte collecté pour l'instant. Achetez un booster et ouvrez-le pour remplir vos pages.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="shop.html" class="min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover :bg-gold-hi">Aller a la boutique</a>
+                <a href="opening.html" class="min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs border-gold text-gold transition hover :bg-gold hover:text-bg">Ouvrir mes boosters</a>
+            </div>
+        </div>
+        <div id="livre" class="mx-auto max-w-5xl">
+            <div class="rounded-xl border-4 border-[#5a3a1e] bg-[#2b1a10] p-3 md:p-5 shadow-[0_0_50px_rgba(0,0,0,.7)]">
+                <div id="pages" class="animate-tourne motion-reduce:animate-none flex flex-col md:flex-row overflow-hidden rounded-md">
+                    <div id="page-gauche" class="flex flex-col flex-1 min-h-[26rem] p-5 bg-[#d9c7a0] text-[#2b1d0e]"></div>
+                    <div class="hidden md:block w-5 bg-linear-to-r from-[#b8a47a] via-[#3a2412] to-[#b8a47a]"></div>
+                    <div id="page-droite" class="flex flex-col flex-1 min-h-[26rem] p-5 bg-[#d9c7a0] text-[#2b1d0e]"></div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between gap-4 mt-6">
+                <button id="precedent" class="min-h-12 px-5 font-title font-bold text-[.85rem] tracking-widest rounded-xs border border-goldtext-gold transition hover:text-bg disabled:opacity-40 disabled:cursor-not-allowed">◀ Precedent</button>
+                <span id="indicateur" class="font-title text-[.85rem] tracking-[.14em] text-muted"></span>
+                <button id="suivant" class="min-h-12 px-5 font-title font-bold text-[.85rem] tracking-widest rounded-xs border border-goldtext-gold transition hover:text-bg disabled:opacity-40 disabled:cursor-not-allowed">Suivant ▶</button>
+            </div>
         </div>
     </section>
   </main>
+  <script src="packs.js" defer></script>
+  <script src="cards.js" defer></script>
+  <script src="grimoire.js" defer></script>
+
+
+</body>

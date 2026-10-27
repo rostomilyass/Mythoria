@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mythoria — Salle d’ouverture</title>
+  <meta name="description" content="Ouvrez vos boosters Mythoria et découvrez vos cartes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-bg: #0b0a10;
+      --color-bg-alt: #0f0d16;
+      --color-panel: #15121d;
+      --color-line: #2a2437;
+      --color-gold: #c9a24b;
+      --color-gold-hi: #e8c76a;
+      --color-violet: #7b3fe4;
+      --color-text: #e8e2d0;
+      --color-muted: #a89f8a;
+      --font-title: "Cinzel", serif;
+      --font-logo: "Cinzel Decorative", serif;
+      --font-body: "Crimson Pro", serif;
+
+      --animate-secoue: secoue 1s ease-in-out forwards;
+      --animate-apparition: apparition 0.5s both;
+
+      @keyframes secoue {
+        0%   { transform: rotate(0deg); }
+        20%  { transform: rotate(-8deg); }
+        40%  { transform: rotate(8deg); }
+        60%  { transform: rotate(-8deg) scale(1.1); }
+        80%  { transform: rotate(8deg) scale(1.2); }
+        100% { transform: scale(1.5); opacity: 0; }
+      }
+      @keyframes apparition {
+        from { opacity: 0; transform: translateY(40px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-bg text-text font-body text-lg leading-normal">
+  <header class="relative flex flex-wrap items-center justify-between gap-6 min-h-18 px-4 md:px-16 border-b border-line">
+    <a href="index.html" class="font-logo text-2xl tracking-[.12em] text-gold hover:text-gold-hi">MYTHORIA</a>
+
+    <nav id="main-nav" aria-label="Navigation principale" class="flex flex-wrap gap-x-9 gap-y-0">
+      <a href="index.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Accueil</a>
+      <a href="shop.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Boutique</a>
+      <a href="opening.html" aria-current="page" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-gold-hi">Ouverture</a>
+      <a href="grimoire.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Grimoire</a>
+      <a href="deck.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Deck</a>
+    </nav>
+
+    <a href="shop.html" class="flex items-center gap-2 min-h-11 font-title text-[.85rem] text-gold hover:text-gold-hi">
+      Panier
+      <span id="cart-count" class="bg-gold text-bg rounded-xl px-2.5 py-0.5 font-bold">0</span>
+      <span id="cart-total">0 dh</span>
+    </a>
+  </header>
+
+  <main class="px-4 md:px-16 py-12">
+    <section class="p-6 bg-panel">
+      <h1 class="font-bold text-gold tracking-[.3em] text-[2.4rem] text-center">SALLE D’OUVERTURE</h1>
+      <p class="italic text-center text-[1.4rem] mb-10">Choisissez un booster et dévoilez vos cartes</p>
+
+      <ul id="stock" class="mx-auto max-w-2xl flex flex-col gap-3"></ul>
+
+      <p id="annonce" aria-live="polite" class="min-h-10 mt-10 text-center font-title font-bold text-2xl tracking-widest"></p>
+
+      <div id="scene" class="min-h-80 mt-2 flex flex-wrap items-center justify-center gap-6 rounded-xs p-4"></div>
+
+      <div class="text-center mt-6">
+        <button id="tout-reveler" hidden class="min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs border border-gold text-gold transition hover:bg-gold hover:text-bg">Tout révéler</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="packs.js" defer></script>
+  <script src="cards.js" defer></script>
+  <script src="opening.js" defer></script>
+</body>
+</html> 

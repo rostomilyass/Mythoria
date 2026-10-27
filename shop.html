@@ -42,6 +42,7 @@
         <a href="shop.html" class="flex items-center gap-2 min-h-11 font-title text-[.85rem] text-gold hover:text-gold-hi">
         Panier
         <span id="cart-count" class="bg-gold text-bg rounded-xl px-2.5 py-0.5 font-bold">0</span>
+        <span id="cart-total">0 dh</span>
         </a>
   </header>
 
@@ -51,41 +52,41 @@
         <h2 class=" font-bold text-gold tracking-[.3em] text-[2.9rem] ">LES BOOSTERS PACK</h2>
         <p class="italic text-[clamp(1.4rem,3vw,1.9rem)] mb-10">nos differents packs pour glorifier votre Deck</p>
         <ul id="catalogue" class="flex flex-row gap-10 ">
-          <li class="produit flex items-center justify-center flex-col w-50  h-full">
+          <li class="produit flex items-center justify-center flex-col w-50  h-full" data-id="beginner">
             <img src="assets/booster-beginner (1).svg" alt="image du pack beginner" class="h-1/2 w-auto drop-shadow-[0_12px_20px_rgba(0,0,0,.6)]">
             <span class="titre text-gold-hi font-bold">Pack du débutant</span>
             <p class="text-center">Pour les nouveaux joueurs, contenant des cartes communes et quelques cartes de rareté supérieure.</p>
-            <span class="prix text-gold">3.99 €</span>
+            <span class="prix text-gold">399 dh</span>
             <div class="flex gap-2">
               <input type="number" min="1" value="1" class="quantite w-1/4 border-2 border-gold-600 rounded-[5px]">
               <button class="ajouter inline-block min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">Ajouter</button>
             </div>
           </li>
-          <li class="produit flex items-center justify-center flex-col w-50  h-full">
+          <li class="produit flex items-center justify-center flex-col w-50  h-full" data-id="legends">
               <img src="assets/booster-legends (1).svg" alt="image du pack legends" class="h-1/2 w-auto drop-shadow-[0_12px_20px_rgba(0,0,0,.6)]">
               <span class="titre text-gold-hi font-bold">Invocation des légendes</span>
               <p class="text-center">Un pack premium proposant une meilleure probabilité d'obtenir des cartes de rareté supérieure.</p>
-              <span class="prix text-gold">9.99 €</span> 
+              <span class="prix text-gold">999 dh</span> 
               <div class="flex gap-2">
                 <input type="number" min="1" value="1" class="quantite w-1/4 border-2 border-gold-600 rounded-[5px]">
                 <button class="ajouter inline-block min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">Ajouter</button>
               </div>
           </li> 
-          <li class="produit flex items-center justify-center flex-col w-50  h-full">
+          <li class="produit flex items-center justify-center flex-col w-50  h-full" data-id="dark">
               <img src="assets/booster-dark (1).svg" alt="image du pack dark" class="h-1/2 w-auto drop-shadow-[0_12px_20px_rgba(0,0,0,.6)]">
               <span class="titre text-gold-hi font-bold">Invocation obscure</span>
               <p class="text-center">Un booster thématique consacré aux monstres, aux serviteurs des Ténèbres et aux sorts interdits.</p>
-              <span class="prix text-gold">6.99 €</span> 
+              <span class="prix text-gold">699 dh</span> 
               <div class="flex gap-2">
                 <input type="number" min="1" value="1" class="quantite w-1/4 border-2 border-gold-600 rounded-[5px]">
                 <button class="ajouter inline-block min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">Ajouter</button>
               </div>
           </li>
-          <li class="produit flex items-center justify-center flex-col w-50  h-full">
+          <li class="produit flex items-center justify-center flex-col w-50  h-full" data-id="lucky">
               <img src="assets/booster-lucky (1).svg" alt="image du pack lucky" class="h-1/2 w-auto drop-shadow-[0_12px_20px_rgba(0,0,0,.6)]">
               <span class="titre text-gold-hi font-bold">Pack de la chance</span>
               <p class="text-center">Un pack mystère avec une composition aléatoire et une chance de découvrir une carte exceptionnelle.</p>
-              <span class="prix text-gold">5.99 €</span>
+              <span class="prix text-gold">599 dh</span>
               <div class="flex gap-2">
                 <input type="number" min="1" value="1" class="quantite w-1/4 border-2 border-gold-600 rounded-[5px]">
                 <button class="ajouter inline-block min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">Ajouter</button>
@@ -101,10 +102,10 @@
 
           <div class="flex items-center justify-between pt-6 mt-2">
             <span class="font-title uppercase tracking-[.14em] text-[.85rem] text-muted">Total</span>
-            <span id="total" class="font-title font-bold text-3xl text-gold-hi">0.00 €</span>
+            <span id="total" class="font-title font-bold text-3xl text-gold-hi">0.00 dh</span>
           </div>
 
-          <button id="commander" onclick="alert('votre commande est lancé')" class="inline-block min-h-12 mt-6 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)]">
+          <button id="commander" class="inline-block min-h-12 mt-6 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi hover:shadow-[0_0_24px_rgba(201,162,75,.45)] disabled:opacity-40 disabled:cursor-not-allowed">
             Commander
           </button>
 

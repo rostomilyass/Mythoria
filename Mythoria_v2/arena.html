@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mythoria : jouez, ouvrez des boosters, remplissez votre grimoire et composez votre deck dark fantasy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        @theme {
+        --color-bg: #0b0a10;
+        --color-bg-alt: #0f0d16;
+        --color-panel: #15121d;
+        --color-line: #2a2437;
+        --color-gold: #c9a24b;
+        --color-gold-hi: #e8c76a;
+        --color-violet: #7b3fe4;
+        --color-text: #e8e2d0;
+        --color-muted: #a89f8a;
+        --font-title: "Cinzel", serif;
+        --font-logo: "Cinzel Decorative", serif;
+        --font-body: "Crimson Pro", serif;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>  
+<body class="bg-bg leading-normal"> 
+    <main>
+        <section class ="min-h-screen p-6 flex flex-col gap-10  lg:flex-row items-center justify-center lg:gap-20 text-center ">
+            <div class = "max-w-md">
+                <h1 class="text-gold font-title tracking-widest">ARENA</h1>
+                <p class="text-text font-body ">l'arene des legendes</p>
+                
+            </div>
+            <div id="arena" class="grid grid-cols-6 grid-rows-6 gap-2 p-3 w-full max-w-md h-[100vh] max-h-[800px] bg-panel border border-line rounded-lg">
+                <div class="col-start-1 col-end-2 row-start-1 row-end-2 border border-violet/40 bg-violet/10 rounded "></div>
+                <div class="col-start-2 col-end-3 row-start-1 row-end-2 border border-violet/40 bg-violet/10 rounded "></div>
+                <div class="col-start-3 col-end-4 row-start-1 row-end-2 border border-violet/40 bg-violet/10 rounded "></div>
+                <div class="col-start-4 col-end-5 row-start-1 row-end-2 border border-violet/40 bg-violet/10 rounded "></div>
+                <div class="col-start-5 col-end-6 row-start-1 row-end-2 border border-violet/40 bg-violet/10 rounded "></div>
+
+                <div class="col-start-1 col-end-2 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-2 col-end-3 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-3 col-end-4 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-4 col-end-5 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div> 
+                <div class="col-start-5 col-end-6 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div> 
+                
+                <div class="col-start-1 col-end-2 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-2 col-end-3 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-3 col-end-4 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-4 col-end-5 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div> 
+                <div class="col-start-5 col-end-6 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div> 
+
+                <div class="col-start-1 col-end-2 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-2 col-end-3 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-3 col-end-4 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-4 col-end-5 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-5 col-end-6 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>  
+
+                <div class="col-start-1 col-end-2 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-2 col-end-3 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-3 col-end-4 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-4 col-end-5 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-5 col-end-6 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
+
+                
+
+                <div class="col-start-1 col-end-2 row-start-6 row-end-7 border border-gold/40 bg-gold/10 rounded "></div>
+                <div class="col-start-2 col-end-3 row-start-6 row-end-7 border border-gold/40 bg-gold/10 rounded "></div>
+                <div class="col-start-3 col-end-4 row-start-6 row-end-7 border border-gold/40 bg-gold/10 rounded "></div>
+                <div class="col-start-4 col-end-5 row-start-6 row-end-7 border border-gold/40 bg-gold/10 rounded "></div>
+                <div class="col-start-5 col-end-6 row-start-6 row-end-7 border border-gold/40 bg-gold/10 rounded "></div>
+
+                <div class="flex flex-col justify-between col-end-7 row-start-1 row-end-7 border border-line rounded w-18">
+                    <div class=" border border-white rounded w-17 h-30"></div>
+                    <div class=" border border-white rounded w-17 h-30"></div>
+                </div>
+                
+            </div>
+            <div class="flex flex-col gap-150">
+                <div>
+                <p class="text-gold">your health</p>
+                <p class="text-gold">❤️x5</p>
+                </div>
+                <div>
+                <p class="text-gold">the openant health</p>
+                <p class="text-gold">❤️x5</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>    
+</html>
+

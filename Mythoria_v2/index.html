@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mythoria : jouez, ouvrez des boosters, remplissez votre grimoire et composez votre deck dark fantasy.">
+    <title>Mythoria - Le Jeu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        @theme {
+        --color-bg: #1a1626;    
+        --color-bg-alt: #2a2340;
+        --color-panel: #241d38;
+        --color-line: #4a3f6b;
+        --color-gold: #e0b857;
+        --color-gold-hi: #ffd978;
+        --color-violet: #9b6bff;
+        --color-text: #f5f0e1;
+        --color-muted: #c9bfa8;
+        --font-title: "Cinzel", serif;
+        --font-logo: "Cinzel Decorative", serif;
+        --font-body: "Crimson Pro", serif;
+        }
+    </style> 
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>  
+<body class="bg-bg text-text font-body leading-normal bg-[radial-gradient(ellipse_at_top,#5a3a9a_0%,#2a2040_45%,#1a1626_100%)] bg-fixed"> 
+    <main class="min-h-screen flex flex-col items-center justify-center gap-10 p-6 text-center">
+        <h1 class="font-logo font-bold text-gold leading-none text-[clamp(3rem,9vw,7.25rem)] [text-shadow:0_0_40px_rgba(201,162,75,.4)]">
+          MYTHORIA
+        </h1>
+        <nav class="flex flex-col gap-4 w-full max-w-xs">
+             <a href="arena.html"
+                class="block rounded-lg border border-gold bg-gold/20 px-8 py-4 font-title uppercase tracking-widest text-gold-hi transition hover:bg-gold/40 hover:shadow-[0_0_20px_rgba(224,184,87,.5)]">
+                Jouer contre le Bot
+            </a>
+            <button id="pvp" type="button"    
+                class="rounded-lg border border-violet bg-violet/20 px-8 py-4 font-title uppercase tracking-widest text-violet transition hover:bg-violet/40 hover:shadow-[0_0_20px_rgba(155,107,255,.5)]">
+                Player 1 contre Player 2
+            </button>
+        </nav>
+    </main>
+    <script>
+        document.getElementById('pvp').addEventListener('click', () => {
+            alert("ce mode de jeu est encore en preparation!");
+        });
+    </script>
+
+
+
+
+</body>
+</html>    

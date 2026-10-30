@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mythoria : jouez, ouvrez des boosters, remplissez votre grimoire et composez votre deck dark fantasy.">
+    <meta name="description"
+        content="Mythoria : jouez, ouvrez des boosters, remplissez votre grimoire et composez votre deck dark fantasy.">
+    <title>Mythoria - Arena</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
     <style type="text/tailwindcss">
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
         
         @theme {
-        --color-bg: #0b0a10;
-        --color-bg-alt: #0f0d16;
-        --color-panel: #15121d;
-        --color-line: #2a2437;
-        --color-gold: #c9a24b;
-        --color-gold-hi: #e8c76a;
-        --color-violet: #7b3fe4;
-        --color-text: #e8e2d0;
-        --color-muted: #a89f8a;
+        --color-bg: #1a1626;
+        --color-bg-alt: #2a2340;
+        --color-panel: #241d38;
+        --color-line: #4a3f6b;
+        --color-gold: #e0b857;
+        --color-gold-hi: #ffd978;
+        --color-violet: #9b6bff;
+        --color-text: #f5f0e1;
+        --color-muted: #c9bfa8;
         --font-title: "Cinzel", serif;
         --font-logo: "Cinzel Decorative", serif;
         --font-body: "Crimson Pro", serif;
         }
+        @layer base {
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>  
-<body class="bg-bg leading-normal"> 
+</head>
+
+<body
+    class="bg-bg text-text font-body leading-normal bg-[radial-gradient(ellipse_at_top,#5a3a9a_0%,#2a2040_45%,#1a1626_100%)] bg-fixed">
     <main>
-        <section class ="min-h-screen p-6 flex flex-col gap-10  lg:flex-row items-center justify-center lg:gap-20 text-center ">
-            <div class = "max-w-md">
-                <h1 class="text-gold font-title tracking-widest">ARENA</h1>
-                <p class="text-text font-body ">l'arene des legendes</p>
-                
+        <section
+            class="min-h-screen p-6 flex flex-col gap-10 lg:flex-row items-center justify-center lg:gap-20 text-center">
+            <div class="max-w-xs">
+                <h1 class="text-5xl font-logo md:text-6xl text-gold-hi tracking-widest drop-shadow-[0_0_12px_violet]">
+                    ARENA</h1>
+
+                <p class="text-gold font-title uppercase tracking-[0.3em] text-sm">l'arene des legendes</p>
+
             </div>
-            <div id="arena" class="grid grid-cols-6 grid-rows-6 gap-2 p-3 w-full max-w-md h-[100vh] max-h-[800px] bg-panel border border-line rounded-lg">
-                <div class="col-start-1 col-end-2 row-start-1 row-end-2 border border-violet/40 bg-violet/10 rounded "></div>
-                <div class="col-start-2 col-end-3 row-start-1 row-end-2 border border-violet/40 bg-violet/10 rounded "></div>
-                <div class="col-start-3 col-end-4 row-start-1 row-end-2 border border-violet/40 bg-violet/10 rounded "></div>
-                <div class="col-start-4 col-end-5 row-start-1 row-end-2 border border-violet/40 bg-violet/10 rounded "></div>
-                <div class="col-start-5 col-end-6 row-start-1 row-end-2 border border-violet/40 bg-violet/10 rounded "></div>
+            <div id="arena"
+                class="grid grid-cols-6 grid-rows-6 gap-2 p-3 w-full max-w-md h-[100vh] max-h-[800px] bg-panel border border-line rounded-lg">
+                <div class="col-start-1 col-end-2 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
+                </div>
+                <div class="col-start-2 col-end-3 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
+                </div>
+                <div class="col-start-3 col-end-4 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
+                </div>
+                <div class="col-start-4 col-end-5 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
+                </div>
+                <div class="col-start-5 col-end-6 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
+                </div>
 
                 <div class="col-start-1 col-end-2 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
                 <div class="col-start-2 col-end-3 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
                 <div class="col-start-3 col-end-4 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-4 col-end-5 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div> 
-                <div class="col-start-5 col-end-6 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div> 
-                
+                <div class="col-start-4 col-end-5 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-5 col-end-6 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
+
                 <div class="col-start-1 col-end-2 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
                 <div class="col-start-2 col-end-3 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
                 <div class="col-start-3 col-end-4 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-4 col-end-5 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div> 
-                <div class="col-start-5 col-end-6 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div> 
+                <div class="col-start-4 col-end-5 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
+                <div class="col-start-5 col-end-6 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
 
                 <div class="col-start-1 col-end-2 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
                 <div class="col-start-2 col-end-3 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
                 <div class="col-start-3 col-end-4 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
                 <div class="col-start-4 col-end-5 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-5 col-end-6 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>  
+                <div class="col-start-5 col-end-6 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
 
                 <div class="col-start-1 col-end-2 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
                 <div class="col-start-2 col-end-3 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
@@ -70,33 +88,82 @@
                 <div class="col-start-4 col-end-5 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
                 <div class="col-start-5 col-end-6 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
 
-                
 
-                <div class="col-start-1 col-end-2 row-start-6 row-end-7 border border-gold/40 bg-gold/10 rounded "></div>
-                <div class="col-start-2 col-end-3 row-start-6 row-end-7 border border-gold/40 bg-gold/10 rounded "></div>
-                <div class="col-start-3 col-end-4 row-start-6 row-end-7 border border-gold/40 bg-gold/10 rounded "></div>
-                <div class="col-start-4 col-end-5 row-start-6 row-end-7 border border-gold/40 bg-gold/10 rounded "></div>
-                <div class="col-start-5 col-end-6 row-start-6 row-end-7 border border-gold/40 bg-gold/10 rounded "></div>
 
-                <div class="flex flex-col justify-between col-end-7 row-start-1 row-end-7 border border-line rounded w-18">
+                <div class="col-start-1 col-end-2 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
+                </div>
+                <div class="col-start-2 col-end-3 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
+                </div>
+                <div class="col-start-3 col-end-4 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
+                </div>
+                <div class="col-start-4 col-end-5 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
+                </div>
+                <div class="col-start-5 col-end-6 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
+                </div>
+
+                <div
+                    class="flex flex-col justify-between col-end-7 row-start-1 row-end-7 border border-line rounded w-18">
                     <div class=" border border-white rounded w-17 h-30"></div>
                     <div class=" border border-white rounded w-17 h-30"></div>
                 </div>
-                
+
             </div>
-            <div class="flex flex-col gap-150">
-                <div>
-                <p class="text-gold">your health</p>
-                <p class="text-gold">❤️x5</p>
+            <div class="flex flex-col justify-between gap-10 lg:h-[85vh] lg:max-h-[800px]">
+                <div class="px-8 py-4 bg-panel border border-violet/40 rounded-lg">
+                    <p class="font-title text-violet uppercase tracking-widest text-sm">L'adversaire</p>
+                    <p class="text-2xl mt-1 tracking-widest">❤️ x5</p>
                 </div>
-                <div>
-                <p class="text-gold">the openant health</p>
-                <p class="text-gold">❤️x5</p>
+                <div class="px-8 py-4 bg-panel border border-gold/40 rounded-lg">
+                    <p class="font-title text-gold uppercase tracking-widest text-sm">Vous</p>
+                    <p class="text-2xl mt-1 tracking-widest">❤️ x5</p>
                 </div>
+
             </div>
+            <div>
+                <button id="openQuit"
+                    class="rounded-md bg-slate-800 py-2 px-4 text-sm text-gold shadow-md hover:bg-slate-700 ml-2"
+                    type="button">
+                    Quitter
+                </button>
+
+                <dialog id="quitModal"
+                    class="fixed inset-0 m-auto h-fit w-4/5 max-w-md rounded-lg bg-white p-4 shadow-lg backdrop:bg-black/60 backdrop:backdrop-blur-sm">
+                    <div class="pb-4 text-xl font-medium text-slate-800">
+                        Voulez-vous vraiment quitter ?
+                    </div>
+                    <div class="border-t border-slate-200 py-4 font-light text-slate-600">
+                        Si vous quittez en plein jeu, vous êtes considéré comme perdant.
+                    </div>
+                    <div class="flex justify-end gap-2 pt-4">
+                        <button id="cancelQuit" type="button"
+                            class="rounded-md py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">
+                            Annuler
+                        </button>
+                        <button id="confirmQuit" type="button"
+                            class="rounded-md bg-green-600 py-2 px-4 text-sm text-white hover:bg-green-700">
+                            Quitter
+                        </button>
+                    </div>
+                </dialog>
+            </div>
+
         </section>
-
     </main>
-</body>    
-</html>
+    <script>
+        const modal = document.getElementById('quitModal');
 
+        document.getElementById('openQuit').addEventListener('click', () => modal.showModal());
+        document.getElementById('cancelQuit').addEventListener('click', () => modal.close());
+        document.getElementById('confirmQuit').addEventListener('click', () => {
+            modal.close();
+            window.location.href = 'index.html';
+        });
+
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.close();
+        });
+    </script>
+</body>
+
+</html>

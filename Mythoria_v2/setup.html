@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mythoria : jouez, ouvrez des boosters, remplissez votre grimoire et composez votre deck dark fantasy.">
+    <title>Mythoria - Le Jeu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+         @theme {
+        --color-bg: #1a1626;
+        --color-bg-alt: #2a2340;
+        --color-panel: #241d38;
+        --color-line: #4a3f6b;
+        --color-gold: #e0b857;
+        --color-gold-hi: #ffd978;
+        --color-violet: #9b6bff;
+        --color-text: #f5f0e1;
+        --color-muted: #c9bfa8;
+        --font-title: "Cinzel", serif;
+        --font-logo: "Cinzel Decorative", serif;
+        --font-body: "Crimson Pro", serif;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-bg text-text font-body leading-normal bg-[radial-gradiant(ellipse_at_top,#5a3a9a_0%,#2a2040_45%,#1a1626_100%)] bg-fixed">
+    <main class="min-h-screen flex flex-col items-center justify-center gap-10 p-6 text-center">
+
+        <h1 class="font-logo font-bold text-gold leading-none text-[clamp(2.5rem,7vw,5rem)] [text-shadow:0_0_40px_rgba(224,184,87,.4)]">PREPARATION</h1>
+
+        <div class="flex w-full max-w-5xl flex-col gap-6 lg:flex-row">
+            
+            <section id="step-1"
+                class="flex flex-1 flex-col items-center gap-5 rounded-lg border border-gold/40 bg-panel p-6">
+                <p class="font-title text-sm uppercase tracking-widest text-gold">Etape 1</p>
+                <h2 class="font-title text-xl text-gold-hi">Lancer la piece</h2>
+
+                <div id="coin" class="flex h-28 w-28 items-center justify-center rounded-full border-4 border-gold bg-gold/25 font-logo text-4xl text-gold-hi shadow-[0_0_25px_rgba(224,184,87,.4)]">M</div>
+
+                <button id="flip" type="button" class="rounded-lg border border-gold bg-gold/20 px-6 py-3 font-title text-sm uppercase tracking-widest text-gold-hi transition hover:bg-gold/40">Lancer la piece</button>
+                <p id="flip-result" class="text-lg text-muted">Le tirage decidera qui commence.</p>
+            </section>
+
+            <section id="step-2" class="flex flex-1 flex-col items-center gap-5 rounded-lg border border-line bg-panel p-6 opacity-50">
+                <p class="font-title text-sm uppercase tracking-widest text-gold">Etape 2</p>
+                <h2 class="font-title text-xl text-gold-hi">Choisis ton camp</h2>
+                <p class="text-muted">Le joueur qui commence choisit son camp.</p>
+
+                <div class="flex w-full flex-col gap-3">
+                    <button id="choose-light" type="button" disabled
+                    class="rounded-lg border border-gold-hi bg-gold-hi/20 px-6 py-4 font-title uppercase tracking-widest text-gold-hi transition hover:bg-gold-hi/40 hover:shadow-[0_0_20px_rgba(255,217,120,.5)] disabled:pointer-events-none">☀️ Lumière</button>
+                    <button id="choose-dark" type="button" disabled
+                    class="rounded-lg border border-violet bg-violet/20 px-6 py-4 font-title uppercase tracking-widest text-violet transition hover:bg-violet/40 hover:shadow-[0_0_20px_rgba(155,107,255,.5)] disabled:pointer-events-none">🌑 Ténèbres</button>
+                </div>
+            </section>
+        </div>
+        <a href="index.html" class="text-sm text-muted hover:text-gold">← Retour</a>
+    </main>    
+</body>
+</html>        

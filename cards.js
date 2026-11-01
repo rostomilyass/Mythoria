@@ -8,7 +8,7 @@ const LABEL_TYPE = {
   spell: 'Sort',
 };
 
-// Catalogue prédéfini. Remplace `icone` par `image: 'assets/cards/xxx.png'` quand tu auras les illustrations.
+
 const CARTES = [
   { id: 'l1', nom: 'Garde de l’Aube', type: 'lumiere', rarete: 'commune', icone: '🛡️', atk: 3, pv: 4 },
   { id: 'l2', nom: 'Archère Solaire', type: 'lumiere', rarete: 'commune', icone: '🏹', atk: 4, pv: 2 },
@@ -35,8 +35,7 @@ const CARTES = [
   { id: 's5', nom: 'Cataclysme Astral', type: 'spell', rarete: 'legendaire', icone: '🌌', effet: 'Détruit toutes les créatures.' },
 ];
 
-// Les probabilités sont des poids (somme = 100 ici) : c'est la fonction tirerCarte() qui les applique.
-// `types` = types de cartes éligibles. `garantie` = rareté minimale de la dernière carte.
+
 const BOOSTERS = {
   beginner: {
     nom: 'Pack du débutant', image: 'assets/booster-beginner (1).svg', nbCartes: 5,

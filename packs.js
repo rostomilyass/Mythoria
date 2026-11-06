@@ -4,7 +4,27 @@ const totalSpan = document.querySelector('#total');
 const cartCount = document.querySelector('#cart-count');
 const cartTotal = document.querySelector('#cart-total');
 const commander = document.querySelector('#commander');
+const viderPanier = document.querySelector('#vider-panier');
 
+// Contenu de chaque booster, lu dans les données du jeu (BOOSTERS dans cards.js) :
+// nombre de cartes, catégories possibles et rareté garantie.
+const CATEGORIES = { lumiere: 'Lumière', tenebres: 'Ténèbres', minion: 'Minions', spell: 'Sorts' };
+if (catalogue && typeof BOOSTERS !== 'undefined') {
+  catalogue.querySelectorAll('.produit').forEach((li) => {
+    const b = BOOSTERS[li.dataset.id];
+    if (!b) return;
+    const contenu = document.createElement('p');
+    contenu.className = 'contenu text-center text-[.95rem] text-text';
+    contenu.textContent = `${b.nbCartes} cartes · ${b.types.map((t) => CATEGORIES[t]).join(', ')}`;
+    li.querySelector('.prix').before(contenu);
+    if (b.garantie) {
+      const garantie = document.createElement('p');
+      garantie.className = 'text-center text-[.9rem] text-gold-hi';
+      garantie.textContent = `Au moins 1 carte ${LABEL_RARETE[b.garantie]} garantie`;
+      li.querySelector('.prix').before(garantie);
+    }
+  });
+}
 
 let cart = [];
 try {
@@ -23,7 +43,7 @@ function render() {
 
   // Header (live total + count)
   cartCount.textContent = nombre;
-  if (cartTotal) cartTotal.textContent = total + ' dh';
+  cartTotal.textContent = total + ' dh';
 
   // Cart section (shop page only)
   if (panier) {
@@ -57,6 +77,7 @@ function render() {
   }
 
   if (commander) commander.disabled = cart.length === 0;
+  if (viderPanier) viderPanier.disabled = cart.length === 0;
   sauvegarder();
 }
 
@@ -91,6 +112,14 @@ if (panier) {
   });
 }
 
+// Empty the whole cart
+if (viderPanier) {
+  viderPanier.addEventListener('click', () => {
+    if (cart.length === 0 || !confirm('Vider tout le panier ?')) return;
+    cart = [];
+    render();
+  });
+}
 
 if (commander) {
   commander.addEventListener('click', () => {

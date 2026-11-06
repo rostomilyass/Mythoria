@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/style.css">
     <style type="text/tailwindcss">
          @theme {
         --color-bg: #1a1626;
@@ -27,26 +28,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-bg text-text font-body leading-normal bg-[radial-gradiant(ellipse_at_top,#5a3a9a_0%,#2a2040_45%,#1a1626_100%)] bg-fixed">
+<body class="bg-bg text-text font-body leading-normal bg-[radial-gradient(ellipse_at_top,#5a3a9a_0%,#2a2040_45%,#1a1626_100%)] bg-fixed">
     <main class="min-h-screen flex flex-col items-center justify-center gap-10 p-6 text-center">
 
-        <h1 class="font-logo font-bold text-gold leading-none text-[clamp(2.5rem,7vw,5rem)] [text-shadow:0_0_40px_rgba(224,184,87,.4)]">PREPARATION</h1>
+        <h1 class="font-logo font-bold text-gold leading-none text-[clamp(2.5rem,7vw,5rem)] [text-shadow:0_0_40px_rgba(224,184,87,.4)]">PRÉPARATION</h1>
 
         <div class="flex w-full max-w-5xl flex-col gap-6 lg:flex-row">
             
             <section id="step-1"
                 class="flex flex-1 flex-col items-center gap-5 rounded-lg border border-gold/40 bg-panel p-6">
-                <p class="font-title text-sm uppercase tracking-widest text-gold">Etape 1</p>
-                <h2 class="font-title text-xl text-gold-hi">Lancer la piece</h2>
+                <p class="font-title text-sm uppercase tracking-widest text-gold">Étape 1</p>
+                <h2 class="font-title text-xl text-gold-hi">Lancer la pièce</h2>
 
                 <div id="coin" class="flex h-28 w-28 items-center justify-center rounded-full border-4 border-gold bg-gold/25 font-logo text-4xl text-gold-hi shadow-[0_0_25px_rgba(224,184,87,.4)]">M</div>
 
-                <button id="flip" type="button" class="rounded-lg border border-gold bg-gold/20 px-6 py-3 font-title text-sm uppercase tracking-widest text-gold-hi transition hover:bg-gold/40">Lancer la piece</button>
-                <p id="flip-result" class="text-lg text-muted">Le tirage decidera qui commence.</p>
+                <button id="flip" type="button" class="rounded-lg border border-gold bg-gold/20 px-6 py-3 font-title text-sm uppercase tracking-widest text-gold-hi transition hover:bg-gold/40">Lancer la pièce</button>
+                <p id="flip-result" class="text-lg text-muted">Le tirage décidera qui commence.</p>
             </section>
 
             <section id="step-2" class="flex flex-1 flex-col items-center gap-5 rounded-lg border border-line bg-panel p-6 opacity-50">
-                <p class="font-title text-sm uppercase tracking-widest text-gold">Etape 2</p>
+                <p class="font-title text-sm uppercase tracking-widest text-gold">Étape 2</p>
                 <h2 class="font-title text-xl text-gold-hi">Choisis ton camp</h2>
                 <p class="text-muted">Le joueur qui commence choisit son camp.</p>
 
@@ -57,8 +58,30 @@
                     class="rounded-lg border border-violet bg-violet/20 px-6 py-4 font-title uppercase tracking-widest text-violet transition hover:bg-violet/40 hover:shadow-[0_0_20px_rgba(155,107,255,.5)] disabled:pointer-events-none">🌑 Ténèbres</button>
                 </div>
             </section>
+            <section id ="step-3" class="flex flex-1 flex-col items-center gap-5 rounded-lg border border-line bg-panel p-6 opacity-50">
+                <p class="font-title text-sm uppercase tracking-widest text-gold">Étape 3</p>
+                <h2 class="font-title text-xl text-gold-hi">Camp de l'adversaire</h2>
+                <p class="text-muted">L'adversaire reçoit automatiquement le camp opposé.</p>
+
+                <div class="flex w-full flex-col gap-3">
+                    <div class="rounded-lg border border-gold/40 bg-gold/10 px-6 py-3">
+                        <p class="font-title text-xs uppercase tracking-widest text-gold">vous</p>
+                        <p id="player-side" class="text-xl">-</p>
+                    </div>
+                    <div class="rounded-lg border border-violet/40 bg-violet/10 px-6 py-3">
+                        <p class="font-title text-xs uppercase tracking-widest text-violet">L'adversaire</p>
+                        <p id="bot-side" class="text-xl">-</p>
+                    </div>
+                </div>
+                
+                <a id="go-arena"
+                    class="pointer-events-none opacity-50 rounded-lg border border-gold bg-gold/20 px-6 py-3 font-title text-sm uppercase tracking-widest text-gold-hi transition hover:bg-gold/40">
+                    Entrer dans l'arène
+                </a>
+            </section>
         </div>
         <a href="index.html" class="text-sm text-muted hover:text-gold">← Retour</a>
-    </main>    
+    </main>
+    <script type="module" src="js/setup.js"></script>    
 </body>
 </html>        

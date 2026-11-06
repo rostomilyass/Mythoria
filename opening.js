@@ -103,7 +103,7 @@ function afficherCartes(cartes) {
     if (c.effet) {
       stats = c.effet;
     } else {
-      stats = 'ATK ' + c.atk + ' / DEF ' + c.pv;
+      stats = 'ATK ' + c.atk + ' / PV ' + c.pv;
     }
 
     html += '<div class="carte w-44 h-64 perspective-[900px] cursor-pointer animate-apparition motion-reduce:animate-none" data-index="' + i + '" style="animation-delay:' + (i * 0.15) + 's">' +

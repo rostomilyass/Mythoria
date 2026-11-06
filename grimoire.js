@@ -41,7 +41,7 @@ function cartesFiltrees() {
 }
 
 function creerPage(liste, collection, numero) {
-    let html = '<div class="grid-grid-cols-2 gap-3 flex-1">';
+    let html = '<div class="grid grid-cols-2 gap-3 flex-1">';
     
     for(let i=0;i<liste.length; i++){
         const c = liste[i];
@@ -53,7 +53,7 @@ function creerPage(liste, collection, numero) {
         }
         let stats = 'Sort'
         if (!c.effet) {
-            stats = 'ATK ' + c.atk + ' . PV' + c.pv;
+            stats = 'ATK ' + c.atk + ' · PV ' + c.pv;
         }
         let badge = '';
         if (qte > 1) {
@@ -66,7 +66,7 @@ function creerPage(liste, collection, numero) {
             '<span class="text-[.75rem] text-muted">' + stats + '</span>' + 
             '</button>';
     }
-    html += '</div><p class = "text-center text-[.85rem] mt-3">-' + numero + ' -</p>';
+    html += '</div><p class="text-center text-[.85rem] mt-3">- ' + numero + ' -</p>';
     return html;
 }
 
@@ -94,14 +94,14 @@ function afficher() {
     const numG = spread * 2 +1;
 
     if (liste.length === 0) {
-        pageG.innerHTML = '<p class="m-auto text-center italic text-xl">Aucune carte ne correspond à ces filteres.</p>';
+        pageG.innerHTML = '<p class="m-auto text-center italic text-xl">Aucune carte ne correspond à ces filtres.</p>';
         pageD.innerHTML = '';
     } else {
         pageG.innerHTML = creerPage(liste.slice(debut, debut + PAR_PAGE), collection, numG);
         pageD.innerHTML = creerPage(liste.slice(debut + PAR_PAGE, debut + parSpread), collection, numG + 1);
     }
 
-    indicateur.textContent = 'Pages' + numG + '-' + (numG + 1) + '/' +(nbSpreads*2);
+    indicateur.textContent = 'Pages ' + numG + '-' + (numG + 1) + ' / ' + (nbSpreads * 2);
     boutonPrec.disabled = (spread === 0);
     boutonSuiv.disabled = (spread>= nbSpreads - 1);
 }

@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/style.css">
     <style type="text/tailwindcss">
         
         @theme {
@@ -43,62 +44,62 @@
     class="bg-bg text-text font-body leading-normal bg-[radial-gradient(ellipse_at_top,#5a3a9a_0%,#2a2040_45%,#1a1626_100%)] bg-fixed">
     <main>
         <section
-            class="min-h-screen p-6 flex flex-col gap-10 lg:flex-row items-center justify-center lg:gap-20 text-center">
+            class="min-h-screen p-6 flex flex-col gap-10 xl:flex-row items-center justify-center xl:gap-10 text-center">
             <div class="max-w-xs">
                 <h1 class="text-5xl font-logo md:text-6xl text-gold-hi tracking-widest drop-shadow-[0_0_12px_violet]">
                     ARENA</h1>
 
-                <p class="text-gold font-title uppercase tracking-[0.3em] text-sm">l'arene des legendes</p>
+                <p class="text-gold font-title uppercase tracking-[0.3em] text-sm">l'arène des légendes</p>
 
             </div>
             <div id="arena"
-                class="grid grid-cols-6 grid-rows-6 gap-2 p-3 w-full max-w-md h-[100vh] max-h-[800px] bg-panel border border-line rounded-lg">
-                <div class="col-start-1 col-end-2 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
+                class="grid grid-cols-6 grid-rows-6 gap-2 p-3 w-full max-w-md shrink-0 h-[100vh] max-h-[800px] bg-panel border border-line rounded-lg">
+                <div id="firstcard" class="col-start-1 col-end-2 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
                 </div>
-                <div class="col-start-2 col-end-3 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
+                <div id="secondcard" class="col-start-2 col-end-3 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
                 </div>
-                <div class="col-start-3 col-end-4 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
+                <div id="thirdcard"  class="col-start-3 col-end-4 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
                 </div>
-                <div class="col-start-4 col-end-5 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
+                <div id="fourth" class="col-start-4 col-end-5 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
                 </div>
-                <div class="col-start-5 col-end-6 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
+                <div id="fifth" class="col-start-5 col-end-6 row-start-1 row-end-2 border border-violet/70 bg-violet/25 rounded ">
                 </div>
 
-                <div class="col-start-1 col-end-2 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-2 col-end-3 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-3 col-end-4 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-4 col-end-5 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-5 col-end-6 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
+                <div id="first-secondline" class="col-start-1 col-end-2 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
+                <div id="second-secondline" class="col-start-2 col-end-3 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
+                <div id="third-secondline" class="col-start-3 col-end-4 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
+                <div id="fourth-secondline" class="col-start-4 col-end-5 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
+                <div id="fifth-secondline" class="col-start-5 col-end-6 row-start-2 row-end-3 border border-line bg-bg-alt rounded "></div>
 
-                <div class="col-start-1 col-end-2 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-2 col-end-3 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-3 col-end-4 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-4 col-end-5 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-5 col-end-6 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
+                <div id="first-thirdline" class="col-start-1 col-end-2 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
+                <div id="second-thirdline" class="col-start-2 col-end-3 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
+                <div id="third-thirdline" class="col-start-3 col-end-4 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
+                <div id="fourth-thirdline" class="col-start-4 col-end-5 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
+                <div id="fifth-thirdline" class="col-start-5 col-end-6 row-start-3 row-end-4 border border-line bg-bg-alt rounded "></div>
 
-                <div class="col-start-1 col-end-2 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-2 col-end-3 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-3 col-end-4 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-4 col-end-5 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-5 col-end-6 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
+                <div id="first-fourthline" class="col-start-1 col-end-2 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
+                <div id="second-fourthline" class="col-start-2 col-end-3 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
+                <div id="third-fourthline" class="col-start-3 col-end-4 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
+                <div id="fourth-fourthline" class="col-start-4 col-end-5 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
+                <div id="fifth-fourthline" class="col-start-5 col-end-6 row-start-4 row-end-5 border border-line bg-bg-alt rounded "></div>
 
-                <div class="col-start-1 col-end-2 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-2 col-end-3 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-3 col-end-4 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-4 col-end-5 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
-                <div class="col-start-5 col-end-6 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
+                <div id="first-fifthline" class="col-start-1 col-end-2 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
+                <div id="second-fifthline" class="col-start-2 col-end-3 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
+                <div id="third-fifthline" class="col-start-3 col-end-4 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
+                <div id="fourth-fifthline" class="col-start-4 col-end-5 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
+                <div id="fifth-fifthline" class="col-start-5 col-end-6 row-start-5 row-end-6 border border-line bg-bg-alt rounded "></div>
 
 
 
-                <div class="col-start-1 col-end-2 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
+                <div id="vous-firstcard" class="col-start-1 col-end-2 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
                 </div>
-                <div class="col-start-2 col-end-3 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
+                <div id="vous-secondtcard" class="col-start-2 col-end-3 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
                 </div>
-                <div class="col-start-3 col-end-4 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
+                <div id="vous-thirdcard" class="col-start-3 col-end-4 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
                 </div>
-                <div class="col-start-4 col-end-5 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
+                <div id="vous-fourthcard" class="col-start-4 col-end-5 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
                 </div>
-                <div class="col-start-5 col-end-6 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
+                <div id="vous-fifthcard" class="col-start-5 col-end-6 row-start-6 row-end-7 border border-gold/70 bg-gold/25 rounded ">
                 </div>
 
                 <div
@@ -108,7 +109,7 @@
                 </div>
 
             </div>
-            <div class="flex flex-col justify-between gap-10 lg:h-[85vh] lg:max-h-[800px]">
+            <div class="flex flex-col justify-between gap-10 xl:h-[85vh] xl:max-h-[800px]">
                 <div class="px-8 py-4 bg-panel border border-violet/40 rounded-lg">
                     <p class="font-title text-violet uppercase tracking-widest text-sm">L'adversaire</p>
                     <p class="text-2xl mt-1 tracking-widest">❤️ x5</p>
@@ -164,6 +165,7 @@
             if (e.target === modal) modal.close();
         });
     </script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>

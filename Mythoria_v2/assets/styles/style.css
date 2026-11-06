@@ -1,0 +1,24 @@
+/* Styles personnalisés, complémentaires à Tailwind CSS (menu, préparation et arène). */
+
+/* Accessibilité : contour bien visible quand on navigue au clavier (Tab). */
+:focus-visible {
+    outline: 3px solid #ffd978;
+    outline-offset: 2px;
+}
+
+/* Journal de combat : barre de défilement discrète, aux couleurs du jeu. */
+#log {
+    scrollbar-width: thin;
+    scrollbar-color: #4a3f6b transparent;
+}
+
+/* Respecte le réglage système « réduire les animations » (pièce qui tourne, transitions). */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mythoria — Jeu de cartes à collectionner</title>
+  <title>Mythoria — Mon grimoire</title>
   <meta name="description" content="Mythoria : ouvrez des boosters, remplissez votre grimoire et composez votre deck dark fantasy.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +44,7 @@
       <a href="opening.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Ouverture</a>
       <a href="grimoire.html" aria-current="page" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-gold-hi">Grimoire</a>
       <a href="deck.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Deck</a>
+      <a href="Mythoria_v2/index.html" class="font-title text-[.85rem] uppercase tracking-[.14em] py-3 text-[#cfc8b4] hover:text-gold-hi">Arène</a>
     </nav>
 
     <a href="shop.html" class="flex items-center gap-2 min-h-11 font-title text-[.85rem] text-gold hover:text-gold-hi">
@@ -54,15 +55,15 @@
   </header>
   <main class="px-4 md:px-16 py-12">
     <section class="p-6 bg-panel">
-        <h1 class="font-bold text-gold tracking-[.3em] text-[2.4rem] text-center">MON GRIMOIRE</h1>
+        <h1 class="font-bold text-gold text-center tracking-[.15em] md:tracking-[.3em] text-3xl md:text-[2.4rem]">MON GRIMOIRE</h1>
         <p id="compteur" class="italic text-center text-[1.3rem] mb-8 text-muted"></p>
         <div class="flex flex-wrap justify-center gap-6 mb-8">
             <label class="flex items-center gap-3 font-title text-[.85rem] uppercase tracking-[.14em]">
                 type
                 <select id="filtre-type" class="bg-bg-alt border border-gold text-text p-2 rounded-xs font-body text-lg normal-case tracking-normal">
                     <option value="tous">Tous les types</option>
-                    <option value="lumiere">Serviteurs de la lumieres (heros)</option>
-                    <option value="tenebres">Serviteurs des Tenebres (monstres)</option>
+                    <option value="lumiere">Serviteurs de la Lumière (héros)</option>
+                    <option value="tenebres">Serviteurs des Ténèbres (monstres)</option>
                     <option value="minion">Minions (serviteurs)</option>
                     <option value="spell">Spells (sorts)</option> 
                 </select>
@@ -70,10 +71,10 @@
             <label class="flex items-center gap-3 font-title text-[.85rem] uppercase tracking-[.14em]">
                 rareté
                 <select id="filtre-rarete" class="bg-bg-alt border border-gold text-text p-2 rounded-xs font-body text-lg normal-case tracking-normal">
-                    <option value="toutes">Tous les raretés</option>
+                    <option value="toutes">Toutes les raretés</option>
                     <option value="commune">Commune</option>
                     <option value="rare">Rare</option>
-                    <option value="epique">Epique</option>
+                    <option value="epique">Épique</option>
                     <option value="legendaire">Légendaire</option> 
                 </select>
             </label>    
@@ -81,9 +82,9 @@
         <div id="vide-total" hidden class="text-center py-16">
             <p class="text-6xl mb-4">📖</p>
             <p class="font-title font-bold text-gold text-2xl tracking-widest mb-2">Votre grimoire est vide.</p>
-            <p class="italic text-muted mb-8">Aucune carte collecté pour l'instant. Achetez un booster et ouvrez-le pour remplir vos pages.</p>
+            <p class="italic text-muted mb-8">Aucune carte collectée pour l'instant. Achetez un booster et ouvrez-le pour remplir vos pages.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="shop.html" class="min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi">Aller a la boutique</a>
+                <a href="shop.html" class="min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs bg-gold text-bg transition hover:bg-gold-hi">Aller à la boutique</a>
                 <a href="opening.html" class="min-h-12 px-7 py-3.5 font-title font-bold text-[.95rem] tracking-widest rounded-xs border border-gold text-gold transition hover:bg-gold hover:text-bg">Ouvrir mes boosters</a>
             </div>
         </div>
@@ -96,9 +97,9 @@
                 </div>
             </div>
             <div class="flex items-center justify-between gap-4 mt-6">
-                <button id="precedent" class="min-h-12 px-5 font-title font-bold text-[.85rem] tracking-widest rounded-xs border border-goldtext-gold transition hover:text-bg disabled:opacity-40 disabled:cursor-not-allowed">◀ Precedent</button>
+                <button id="precedent" class="min-h-12 px-5 font-title font-bold text-[.85rem] tracking-widest rounded-xs border border-gold text-gold transition hover:text-bg disabled:opacity-40 disabled:cursor-not-allowed">◀ Précédent</button>
                 <span id="indicateur" class="font-title text-[.85rem] tracking-[.14em] text-muted"></span>
-                <button id="suivant" class="min-h-12 px-5 font-title font-bold text-[.85rem] tracking-widest rounded-xs border border-goldtext-gold transition hover:text-bg disabled:opacity-40 disabled:cursor-not-allowed">Suivant ▶</button>
+                <button id="suivant" class="min-h-12 px-5 font-title font-bold text-[.85rem] tracking-widest rounded-xs border border-gold text-gold transition hover:text-bg disabled:opacity-40 disabled:cursor-not-allowed">Suivant ▶</button>
             </div>
         </div>
     </section>
@@ -110,3 +111,4 @@
 
 
 </body>
+</html>
